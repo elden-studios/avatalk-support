@@ -1,0 +1,109 @@
+/* Avatalk support, privacy and terms — the app's own look (HomeSky): the night ground, the icon's
+   three lights (amber, teal, violet), glass cards, the apricot accent and the orange button.
+   Fonts are the app's own, Unbounded for headings and Onest for text, served from this site so the
+   pages make no third-party requests (both under the SIL Open Font License, fonts/OFL.txt). */
+
+@font-face { font-family: "Unbounded"; src: url("fonts/Unbounded-Variable.ttf") format("truetype"); font-weight: 200 900; font-display: swap; }
+@font-face { font-family: "Onest"; src: url("fonts/Onest-Variable.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+
+:root {
+  color-scheme: dark;
+  --ground: #07070b;                    /* HomeSky.ground */
+  --text: #f6f4fa;                      /* ink.primary */
+  --text-2: #d8d4de;                    /* ink.secondary */
+  --text-3: #a39dac;                    /* quiet lines */
+  --glass: rgb(255 255 255 / 0.06);     /* ink.cardFill */
+  --glass-strong: rgb(255 255 255 / 0.09);
+  --hairline: rgb(255 255 255 / 0.16);  /* ink.hairline */
+  --accent: #ffc89a;                    /* ink.accent: pale apricot, readable over every glow */
+  --fill: #e8722a;                      /* ink.fill: the orange button */
+  --fill-dark: #c45a1c;
+  --on-fill: #1a0b03;                   /* ink.onPrimary */
+  --amber: rgb(255 150 64 / 0.22);      /* Glow.ember */
+  --teal: rgb(42 191 191 / 0.14);       /* Glow.teal */
+  --violet: rgb(150 96 255 / 0.18);     /* Glow.violet */
+  --heading: "Unbounded", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --body: "Onest", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: var(--ground); }
+body {
+  margin: 0;
+  min-height: 100svh;
+  color: var(--text);
+  font: 400 17px/1.65 var(--body);
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(55% 38% at 8% 0%, var(--amber), transparent 72%),
+    radial-gradient(45% 34% at 96% 6%, var(--teal), transparent 72%),
+    radial-gradient(60% 45% at 92% 100%, var(--violet), transparent 72%),
+    var(--ground);
+  background-attachment: fixed;
+}
+
+.wrap { max-width: 760px; margin: 0 auto; padding: max(28px, env(safe-area-inset-top)) 16px max(56px, env(safe-area-inset-bottom)); }
+
+/* The brand row: the app icon, the name, and the three pages. */
+.brand { display: flex; align-items: center; gap: 14px; margin-block-end: 22px; }
+.brand img { width: 56px; height: 56px; border-radius: 13px; box-shadow: 0 0 0 1px var(--hairline), 0 10px 28px rgb(0 0 0 / 0.45); }
+.brand .name { font: 500 22px/1.1 var(--heading); letter-spacing: -0.01em; margin: 0; color: var(--text); text-decoration: none; }
+.brand .by { margin: 4px 0 0; font-size: 14px; color: var(--text-3); }
+
+nav.pages { display: flex; flex-wrap: wrap; gap: 8px; margin-block-end: 30px; }
+nav.pages a {
+  font: 600 15px/1 var(--body); color: var(--text-2); text-decoration: none;
+  background: var(--glass); border: 1px solid var(--hairline); border-radius: 999px; padding: 10px 16px;
+}
+nav.pages a[aria-current="page"] { color: var(--on-fill); background: var(--accent); border-color: var(--accent); }
+
+h1 { font: 500 clamp(26px, 6vw, 34px)/1.15 var(--heading); letter-spacing: -0.02em; margin: 0 0 10px; text-wrap: balance; }
+h2 { font: 500 19px/1.3 var(--heading); letter-spacing: -0.01em; margin: 40px 0 12px; text-wrap: balance; }
+h3 { font: 600 18px/1.35 var(--body); margin: 26px 0 6px; color: var(--text); }
+p, li { margin: 0 0 12px; color: var(--text-2); }
+strong { font-weight: 600; color: var(--text); }
+em { font-style: normal; color: var(--text); font-weight: 500; }
+ul { padding-inline-start: 20px; }
+li::marker { color: var(--accent); }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.lede { font-size: 19px; color: var(--text-2); margin-block-end: 26px; }
+
+/* Glass, as the app's cards are drawn. */
+.card, .meta {
+  background: var(--glass); border: 1px solid var(--hairline); border-radius: 22px;
+  padding: 18px 20px; margin: 20px 0 28px;
+  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+}
+.meta { font-size: 15px; }
+.meta div { margin: 4px 0; color: var(--text-2); }
+.card h2 { margin-top: 0; }
+
+/* The orange pill, the app's main button. */
+.btn {
+  display: inline-block; margin-top: 6px; font: 600 17px/1 var(--body); color: var(--on-fill);
+  background: var(--fill); border-radius: 999px; padding: 15px 22px; text-decoration: none;
+}
+.btn:active { background: var(--fill-dark); }
+
+/* Questions on the support page, each its own glass row. */
+.faq { display: grid; gap: 10px; margin-top: 8px; }
+.faq details { background: var(--glass); border: 1px solid var(--hairline); border-radius: 18px; padding: 0 18px; }
+.faq summary { cursor: pointer; list-style: none; font: 600 17px/1.4 var(--body); color: var(--text); padding: 16px 28px 16px 0; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; inset-inline-end: 0; top: 13px; font: 400 24px/1 var(--body); color: var(--accent); }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { padding-bottom: 6px; }
+
+/* The retention schedule. */
+.sched-wrap { overflow-x: auto; margin: 6px 0 18px; border: 1px solid var(--hairline); border-radius: 18px; background: var(--glass); }
+table.sched { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.sched th, table.sched td { text-align: start; padding: 11px 14px; vertical-align: top; border-bottom: 1px solid var(--hairline); color: var(--text-2); }
+table.sched tr:last-child td { border-bottom: 0; }
+table.sched th { font-weight: 600; color: var(--text); background: var(--glass-strong); }
+
+footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--hairline); color: var(--text-3); font-size: 14px; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+footer a { color: var(--text-2); }
+footer .copy { flex-basis: 100%; margin: 6px 0 0; color: var(--text-3); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

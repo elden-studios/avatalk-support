@@ -2,54 +2,35 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#07070b">
 <title>Avatalk — Support</title>
-<meta name="description" content="Support and contact for Avatalk, the AI talking-avatar video app.">
-<style>
-  :root { color-scheme: dark; --bg:#0E0E10; --card:#18181B; --line:#2A2A2E;
-          --text:#F2F2F4; --muted:#9A9AA2; --brand:#E87229; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); line-height:1.65;
-         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
-         -webkit-font-smoothing:antialiased; }
-  .wrap { max-width:720px; margin:0 auto; padding:56px 20px 80px; }
-  header { display:flex; align-items:center; gap:14px; margin-bottom:8px; }
-  .mark { width:44px; height:44px; flex:none; }
-  h1 { font-size:1.6rem; margin:0; font-weight:600; letter-spacing:-0.01em; }
-  .by { color:var(--muted); font-size:.9rem; margin:0; }
-  h2 { font-size:1.15rem; margin:44px 0 12px; font-weight:600; }
-  h3 { font-size:1rem; margin:26px 0 6px; font-weight:600; }
-  p { margin:0 0 14px; }
-  .lede { color:var(--muted); font-size:1.05rem; margin:20px 0 0; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:14px;
-          padding:22px 24px; margin:28px 0; }
-  a { color:var(--brand); }
-  .btn { display:inline-block; background:var(--brand); color:#231708; font-weight:600;
-         text-decoration:none; padding:13px 22px; border-radius:11px; margin-top:6px; }
-  .muted { color:var(--muted); }
-  .small { font-size:.9rem; }
-  footer { margin-top:56px; padding-top:22px; border-top:1px solid var(--line);
-           color:var(--muted); font-size:.875rem; }
-  footer a { margin-right:18px; }
-</style>
+<meta name="description" content="Help with Avatalk, the talking-video app by Elden Studios.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="fonts/Onest-Variable.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 <div class="wrap">
-
-  <header>
-    <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
-      <polygon points="50,4 89,50 50,50" fill="#E87229"/>
-      <polygon points="50,4 11,50 50,50" fill="#8A8A8A"/>
-      <polygon points="50,96 89,50 50,50" fill="#6B3212"/>
-      <polygon points="50,96 11,50 50,50" fill="#E4DCCC"/>
-    </svg>
+  <header class="brand">
+    <a href="./"><img src="assets/avatalk-icon.png" alt="Avatalk app icon" width="56" height="56"></a>
     <div>
-      <h1>Avatalk</h1>
+      <a class="name" href="./">Avatalk</a>
       <p class="by">By Elden Studios</p>
     </div>
   </header>
 
-  <p class="lede">Turn a photo and a script into a talking video. This page is for getting help.</p>
+  <nav class="pages" aria-label="Pages">
+    <a href="./" aria-current="page">Support</a>
+    <a href="./privacy.html">Privacy</a>
+    <a href="./terms.html">Terms</a>
+  </nav>
+
+
+  <h1>How can we help?</h1>
+  <p class="lede">Avatalk turns a photo and your words into a talking video. Here are answers to common questions, and a person to write to.</p>
 
   <div class="card">
     <h2 style="margin-top:0">Contact us</h2>
@@ -60,75 +41,91 @@
   </div>
 
   <h2>Common questions</h2>
-
-  <h3>What are credits?</h3>
-  <p>Credits are seconds of finished video: a ten-second video uses ten credits. Extras such as an HD
+  <div class="faq">
+    <details>
+      <summary>What are credits?</summary>
+      <p>Credits are seconds of finished video: a ten-second video uses ten credits. Extras such as an HD
      version, a restyled look or a voice of your own cost a stated number of credits. New accounts
      don't start with free credits; if you have never bought any, there is a small one-time trial
      pack to try the App.</p>
-
-  <h3>Do credits expire?</h3>
-  <p>No. Credit packs are one-time purchases and stay on your account until you use them. There is
+    </details>
+    <details>
+      <summary>Do credits expire?</summary>
+      <p>No. Credit packs are one-time purchases and stay on your account until you use them. There is
      no subscription and nothing to cancel.</p>
-
-  <h3>Is “Hear it first” free?</h3>
-  <p>Yes. Listening to how your words will sound before you make the video costs nothing.</p>
-
-  <h3>Why is there a limit on how long a video can be?</h3>
-  <p>The model that animates the face accepts up to about 30 seconds of audio, so each video is
+    </details>
+    <details>
+      <summary>Is “Hear it first” free?</summary>
+      <p>Yes. Listening to how your words will sound before you make the video costs nothing.</p>
+    </details>
+    <details>
+      <summary>Why is there a limit on how long a video can be?</summary>
+      <p>The model that animates the face accepts up to about 30 seconds of audio, so each video is
      capped near that. The App shows the length as you write, so you know before you start.</p>
-
-  <h3>How long does a video take?</h3>
-  <p>Usually a couple of minutes. It can take longer when the service is busy. You can leave the
+    </details>
+    <details>
+      <summary>How long does a video take?</summary>
+      <p>Usually a couple of minutes. It can take longer when the service is busy. You can leave the
      App while it works — the video finishes on our side and will be waiting in your library.</p>
-
-  <h3>My video failed. Was I charged?</h3>
-  <p>No. A video that fails costs nothing, and you can tap Retry to try again. A video uses its
+    </details>
+    <details>
+      <summary>My video failed. Was I charged?</summary>
+      <p>No. A video that fails costs nothing, and you can tap Retry to try again. A video uses its
      credits when it has been made; if it never reaches your phone within 7 days, the credits are
      returned automatically. HD versions and restyled looks are paid when you start them and
      returned automatically if they fail.</p>
-
-  <h3>Why couldn't my photo be restyled?</h3>
-  <p>The image service runs its own safety check and sometimes turns a photo down without saying
+    </details>
+    <details>
+      <summary>Why couldn't my photo be restyled?</summary>
+      <p>The image service runs its own safety check and sometimes turns a photo down without saying
      why. You aren't charged. Try another look or another photo.</p>
-
-  <h3>How do links work?</h3>
-  <p>When you share a video as a link, anyone with the link can watch it, and reply with a video of
+    </details>
+    <details>
+      <summary>How do links work?</summary>
+      <p>When you share a video as a link, anyone with the link can watch it, and reply with a video of
      their own. A link works for 30 days. To end it sooner, open the video and tap
      <em>Stop sharing</em>, or delete the video. People who already saved the video keep it.</p>
-
-  <h3>How do I report a video someone sent me?</h3>
-  <p>Use <em>Report</em> on the link page or in the App. The video is hidden at once and we review
+    </details>
+    <details>
+      <summary>How do I report a video someone sent me?</summary>
+      <p>Use <em>Report</em> on the link page or in the App. The video is hidden at once and we review
      it within 48 hours.</p>
-
-  <h3>How do I delete my voice?</h3>
-  <p>In Settings, tap <em>Delete my voice</em>. The App stops using it at once, and the recording of
+    </details>
+    <details>
+      <summary>How do I delete my voice?</summary>
+      <p>In Settings, tap <em>Delete my voice</em>. The App stops using it at once, and the recording of
      the permission you read is deleted with it.</p>
-
-  <h3>How do I delete my data?</h3>
-  <p>In Settings, under Danger zone, tap <em>Delete my data</em>. It removes your uploaded photos,
+    </details>
+    <details>
+      <summary>How do I delete my data?</summary>
+      <p>In Settings, under Danger zone, tap <em>Delete my data</em>. It removes your uploaded photos,
      videos, drafts, projects and links, on your phone and on our servers, and keeps your credits.
      Photos and recordings uploaded to make a video are also deleted automatically after 72 hours.
      To delete everything, including your account, email us with your support code. The
      <a href="./privacy.html">Privacy Policy</a> lists exactly what is kept and for how long.</p>
-
-  <h3>I had a subscription. What happened to it?</h3>
-  <p>Avatalk no longer sells subscriptions — it uses one-time credit packs. If you still have an
+    </details>
+    <details>
+      <summary>I had a subscription. What happened to it?</summary>
+      <p>Avatalk no longer sells subscriptions — it uses one-time credit packs. If you still have an
      active subscription it keeps working, and each renewal adds credits to your balance. You can
      cancel any time in the Subscriptions section of your iPhone Settings.</p>
-
-  <h3>Can I get a refund?</h3>
-  <p>Purchases are handled by Apple, so refunds go through them — visit
+    </details>
+    <details>
+      <summary>Can I get a refund?</summary>
+      <p>Purchases are handled by Apple, so refunds go through them — visit
      <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. If Apple refunds a
      purchase, the credits it added are removed. If something went wrong in the App, email us as
      well and we'll help.</p>
+    </details>
+  </div>
 
   <footer>
+    <a href="./">Support</a>
     <a href="./privacy.html">Privacy Policy</a>
     <a href="./terms.html">Terms of Use</a>
     <a href="https://apps.apple.com/app/id6471355914">App Store</a>
-    <a href="mailto:bazerbashi@elden-studios.com">Email support</a>
-    <p class="small" style="margin-top:14px">&copy; Elden Studios</p>
+    <a href="mailto:bazerbashi@elden-studios.com">Email us</a>
+    <p class="copy">&copy; Elden Studios Company</p>
   </footer>
 
 </div>
